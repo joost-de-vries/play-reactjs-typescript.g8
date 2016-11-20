@@ -3,22 +3,39 @@
 <html lang="en" data-framework="angular2">
   <head>
     @* in this version of the application the typescript compilation is done in the browser *@
-  <meta charset="utf-8">
-  <title>React</title>
-  <script src='@routes.Assets.versioned("lib/core-js/index.js")'></script>
-  <script src='@routes.Assets.versioned("lib/react/dist/react.js")'></script>
-  <script src='@routes.Assets.versioned("lib/react-dom/dist/react-dom.js")'></script>
-  <script src='@routes.Assets.versioned("lib/systemjs/dist/system.js")'></script>
+    <meta charset="utf-8">
+    <title>React</title>
+    <script src='@routes.Assets.versioned("lib/systemjs/dist/system.js")'></script>
 
   </head>
   <body>
-<div id="root"></div>
+    <div id="root"></div>
     <script>
-			System.config({
-			    baseURL: 'assets',
+      System.defaultJSExtensions = true;
+      System.config({
+        baseURL: 'assets',
+        paths: {
+          "*": "*.js",
+          "react": "lib/react",
+          "react-dom": "lib/react-dom",
+          "es6": "lib/core-js/es6"
+        },
+        packages: {
+          "react": {
+            defaultExtension: "js",
+            format: 'cjs',
+            main: "dist/react.js"
+          },
+          "react-dom": {
+            defaultExtension: "js",
+            format: 'cjs',
+            main: "dist/react-dom.js"
+          }
+        }
+
       });
-      System.import('app/bootstrap')
+      System.import('main')
         .then(null, console.error.bind(console));
-                    </script>
+    </script>
   </body>
 </html>

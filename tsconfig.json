@@ -6,7 +6,8 @@
     "target": "es5",
     "module": "system",
     "moduleResolution": "node",
-    /* the following two setting is required for react jsx templates to work*/
+    "allowSyntheticDefaultImports": true,
+    /* the following setting is required for react jsx templates to work*/
     "jsx": "react",
     "emitDecoratorMetadata": true,
     "experimentalDecorators":true,
@@ -18,26 +19,24 @@
     "baseUrl": ".",
     "paths": {
       "*": [
-        "*",
-        "target/web/node-modules/main/webjars/*"
+        "target/web/node-modules/main/webjars/*",
+        "target/web/node-modules/main/webjars/@types/*"
       ]
     },
     /* noImplicitAny when you want your typescript to be fully typed */
     "noImplicitAny":true,
     "noFallthroughCasesInSwitch":true,
+    "noEmitOnError": true,
     "noImplicitReturns":true,
     "noImplicitThis":true,
     // "strictNullChecks":true, doesn't work yet with @angular RC4
     "outDir": "./target/ts",
-    "lib": ["es6", "dom"]
+    "lib": ["es6","dom"]
   },
   /* the information below is not used by sbt-typescript. but you can use it if you want to run tsc -p .*/
   "exclude": [
     "node_modules",
     "project/target",
-    "typings/main",
-    "typings/main.d.ts",
-    "typings/browser",
-    "target/web"
+    "target"
   ]
 }

@@ -34,6 +34,7 @@ libraryDependencies ++= {
     "org.webjars.npm" % "types__whatwg-fetch" % "0.0.32",
 
     "org.webjars.npm" % "core-js" % "2.4.1",
+    "org.webjars.npm" % "systemjs" % "0.19.41",
 
     //tslint dependency
     "org.webjars.npm" % "tslint-eslint-rules" % "2.1.0",
@@ -44,10 +45,6 @@ libraryDependencies ++= {
   )
 }
 dependencyOverrides += "org.webjars.npm" % "types__whatwg-streams" % "0.0.1"
-
-// the typescript typing information is by convention in the typings directory
-// It provides ES6 implementations. This is required when compiling to ES5.
-typingsFile := Some(baseDirectory.value / "typings" / "index.d.ts")
 
 // use the webjars npm directory (target/web/node_modules ) for resolution of module imports of angular2/core etc
 resolveFromWebjarsNodeModulesDir := true
