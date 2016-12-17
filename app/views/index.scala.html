@@ -18,6 +18,8 @@
           "*": "*.js",
           "react": "lib/react",
           "react-dom": "lib/react-dom",
+          "redux": "lib/redux",
+          "react-redux": "lib/react-redux",
           "es6": "lib/core-js/es6"
         },
         packages: {
@@ -30,11 +32,21 @@
             defaultExtension: "js",
             format: 'cjs',
             main: "dist/react-dom.js"
+          },
+          "redux": {
+            defaultExtension: "js",
+            format: 'cjs',
+            main: "dist/redux.js"
+          },
+          "react-redux": {
+            defaultExtension: "js",
+            format: 'cjs',
+            main: "dist/react-redux.js"
           }
         }
 
       });
-      System.import('main')
+      System.import('index')
         .then(null, console.error.bind(console));
     </script>
   </body>

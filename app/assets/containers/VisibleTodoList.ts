@@ -1,8 +1,10 @@
 import { connect } from 'react-redux'
-import { toggleTodo } from '../actions'
+import { toggleTodo } from '../actions/index'
 import TodoList from '../components/TodoList'
+import {TodoState} from '../reducers/todos'
+import {AppState} from '../reducers/index'
 
-const getVisibleTodos = (todos, filter) => {
+const getVisibleTodos = (todos:TodoState[], filter:string) => {
   switch (filter) {
     case 'SHOW_ALL':
       return todos
@@ -15,7 +17,7 @@ const getVisibleTodos = (todos, filter) => {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state:AppState) => ({
   todos: getVisibleTodos(state.todos, state.visibilityFilter)
 })
 

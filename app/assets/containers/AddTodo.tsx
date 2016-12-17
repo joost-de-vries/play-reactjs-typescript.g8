@@ -1,9 +1,13 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { addTodo } from '../actions'
+import * as React from 'react'
+import { connect, Dispatch } from 'react-redux'
+import { addTodo, Actions ,AddTodoAction} from '../actions/index'
 
-let AddTodo = ({ dispatch }) => {
-  let input
+interface AddTodoProps{
+  dispatch: Dispatch<Actions>
+}
+
+let AddTodo = ({ dispatch }:AddTodoProps) => {
+  let input:HTMLInputElement
 
   return (
     <div>
