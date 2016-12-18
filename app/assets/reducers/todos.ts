@@ -1,42 +1,38 @@
-import {AppAction} from '../actions'
+import { AppAction, AddTodoAction, ToggleTodoAction } from '../actions'
 
 export interface TodoState {
-        id: number
-        text: string
-        completed: boolean
+  id: number
+  text: string
+  completed: boolean
 }
-const todo = (state:TodoState, action:AppAction) => {
-  switch (action.type) {
-    case 'ADD_TODO':
-      return {
-        id: action.id,
-        text: action.text,
-        completed: false
-      }
-    case 'TOGGLE_TODO':
-      if (state.id !== action.id) {
-        return state
-      }
 
-      return {
-        ...state,
-        completed: !state.completed
-      }
-    default:
-      return state
+const create = (action: AddTodoAction) => ({
+  id: action.id,
+  text: action.text,
+  completed: false
+})
+
+const toggle = (state: TodoState, action: ToggleTodoAction) => {
+  if (state.id !== action.id) {
+    return state
+  }
+
+  return {
+    ...state,
+    completed: !state.completed
   }
 }
 
-const todos = (state:TodoState[] = [], action:AppAction) => {
+const todos = (state: TodoState[] = [], action: AppAction) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [
         ...state,
-        todo(undefined, action)
+        create(action)
       ]
     case 'TOGGLE_TODO':
       return state.map(t =>
-        todo(t, action)
+        toggle(t, action)
       )
     default:
       return state

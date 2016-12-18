@@ -10,12 +10,15 @@
     /* the following setting is required for react jsx templates to work*/
     "jsx": "react",
     "emitDecoratorMetadata": true,
-    "experimentalDecorators":true,
+    "experimentalDecorators": true,
     /* for reading your ts source while debugging from a browser */
     "sourceMap": true,
     "mapRoot": "/assets",
     "sourceRoot": "/assets",
-    "rootDirs": ["app/assets","test/assets"],
+    "rootDirs": [
+      "app/assets",
+      "test/assets"
+    ],
     "baseUrl": ".",
     "paths": {
       "*": [
@@ -24,14 +27,17 @@
       ]
     },
     /* noImplicitAny when you want your typescript to be fully typed */
-    "noImplicitAny":true,
-    "noFallthroughCasesInSwitch":true,
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
     "noEmitOnError": true,
-    "noImplicitReturns":true,
-    "noImplicitThis":true,
-    // "strictNullChecks":true, doesn't work yet with @angular RC4
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
     "outDir": "./target/ts",
-    "lib": ["es6","dom"]
+    "lib": [
+      "es6",
+      "dom"
+    ]
   },
   /* the information below is not used by sbt-typescript. but you can use it if you want to run tsc -p .*/
   "exclude": [
