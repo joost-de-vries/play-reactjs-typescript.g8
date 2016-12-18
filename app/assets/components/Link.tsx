@@ -1,6 +1,5 @@
 import * as React from "react"
-import {PropTypes, MouseEventHandler, ReactNode} from "react"
-import HTMLProps = React.HTMLProps
+import {PropTypes, MouseEventHandler, ReactNode, HTMLProps} from "react"
 
 function assert<A>(aOpt: A | undefined): A {
   return aOpt!
