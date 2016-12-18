@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { PropTypes,MouseEventHandler ,ReactNode} from 'react'
+import HTMLProps = React.HTMLProps
 
 export interface LinkProps{
-  active:boolean
-  onClick: ()=>void
-  children: ReactNode
+  active?:boolean
   filter:string
 }
-export const Link = ({ active, children, onClick }:LinkProps) => {
+
+export const Link = ({ active, children, onClick }:LinkProps & HTMLProps<any>) => {
   if (active) {
     return <span>{children}</span>
   }
@@ -16,7 +16,7 @@ export const Link = ({ active, children, onClick }:LinkProps) => {
     <a href="#"
        onClick={e => {
          e.preventDefault()
-         onClick()
+         onClick(e)
        }}
     >
       {children}

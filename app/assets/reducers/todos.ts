@@ -1,11 +1,11 @@
-import {Actions} from '../actions'
+import {AppAction} from '../actions'
 
 export interface TodoState {
         id: number
         text: string
         completed: boolean
 }
-const todo = (state:TodoState, action:Actions) => {
+const todo = (state:TodoState, action:AppAction) => {
   switch (action.type) {
     case 'ADD_TODO':
       return {
@@ -27,7 +27,7 @@ const todo = (state:TodoState, action:Actions) => {
   }
 }
 
-const todos = (state:TodoState[] = [], action:Actions) => {
+const todos = (state:TodoState[] = [], action:AppAction) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [

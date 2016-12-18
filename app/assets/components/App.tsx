@@ -5,7 +5,7 @@ import VisibleTodoList from '../containers/VisibleTodoList'
 
 const App = () => (
   <div>
-    <AddTodo dispatch={()=>{console.log("this shouldn't happen")}}/>
+    <AddTodo />
     <VisibleTodoList />
     <Footer />
   </div>

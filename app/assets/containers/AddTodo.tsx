@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { connect, Dispatch } from 'react-redux'
-import { addTodo, Actions ,AddTodoAction} from '../actions/index'
+import { addTodo, AppAction} from '../actions/index'
 
 interface AddTodoProps{
-  dispatch: Dispatch<Actions>
+  dispatch?: Dispatch<AppAction>
 }
 
 let AddTodo = ({ dispatch }:AddTodoProps) => {

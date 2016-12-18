@@ -1,14 +1,11 @@
 import {Action} from 'redux'
 
-
 let nextTodoId = 0
-
-
 
 export interface AddTodoAction extends Action{
    type: 'ADD_TODO'
   id: number
-  text:string 
+  text:string
 }
 
 export const addTodo = (text:string) => (<AddTodoAction>{
@@ -29,7 +26,7 @@ export const setVisibilityFilter = (filter:string) => (<SetVisibilityFilterActio
 
 export interface ToggleTodoAction extends Action{
   type: 'TOGGLE_TODO',
-  id:number 
+  id:number
 }
 
 export const toggleTodo = (id:number) => (<ToggleTodoAction>{
@@ -37,4 +34,4 @@ export const toggleTodo = (id:number) => (<ToggleTodoAction>{
   id
 })
 
-export type Actions = AddTodoAction | SetVisibilityFilterAction | ToggleTodoAction
+export type AppAction = AddTodoAction | SetVisibilityFilterAction | ToggleTodoAction
