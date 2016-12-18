@@ -1,13 +1,13 @@
-import * as React from 'react'
-import { PropTypes } from 'react'
+import * as React from "react"
+import {PropTypes} from "react"
 
 interface TodoProps {
-  onClick: (e:any)=> void
-  completed:boolean
-  text:string
+  onClick: (e: any) => void
+  completed: boolean
+  text: string
 }
 
-const Todo = ({ onClick, completed, text }:TodoProps) => (
+const Todo = ({onClick, completed, text}:TodoProps) => (
   <li
     onClick={onClick}
     style={{

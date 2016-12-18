@@ -1,4 +1,4 @@
-import { AppAction, AddTodoAction, ToggleTodoAction } from '../actions'
+import {AppAction, AddTodoAction, ToggleTodoAction} from "../actions"
 
 export interface TodoState {
   id: number

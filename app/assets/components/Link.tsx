@@ -1,17 +1,17 @@
-import * as React from 'react'
-import { PropTypes,MouseEventHandler ,ReactNode} from 'react'
+import * as React from "react"
+import {PropTypes, MouseEventHandler, ReactNode} from "react"
 import HTMLProps = React.HTMLProps
 
-function assert<A>(aOpt:A | undefined):A {
+function assert<A>(aOpt: A | undefined): A {
   return aOpt!
 }
 
-export interface LinkProps{
-  active?:boolean
-  filter:string
+export interface LinkProps {
+  active?: boolean
+  filter: string
 }
 
-export const Link = ({ active, children, onClick }:LinkProps & HTMLProps<any>) => {
+export const Link = ({active, children, onClick}:LinkProps & HTMLProps<any>) => {
   if (active) {
     return <span>{children}</span>
   }
