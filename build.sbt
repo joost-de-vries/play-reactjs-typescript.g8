@@ -6,6 +6,9 @@ scalaVersion := "2.11.8"
 incOptions := incOptions.value.withNameHashing(true)
 updateOptions := updateOptions.value.withCachedResolution(cachedResoluton = true)
 
+resolvers ++= Seq(
+  Resolver.bintrayRepo("webjars","maven")
+)
 libraryDependencies ++= {
   Seq(
     cache,
@@ -22,10 +25,10 @@ libraryDependencies ++= {
 //    "org.webjars.npm" % "redux-localstorage" % "0.4.1",
 //    "org.webjars.npm" % "redux-logger" % "2.7.4",
 //    "org.webjars.npm" % "redux-thunk" % "2.1.0",
-    "org.webjars.npm" % "types__react" % "15.0.4",
+    "org.webjars.npm" % "types__react" % "15.0.34",
 //    "org.webjars.npm" % "types__react-addons-test-utils" % "0.14.15",
-    "org.webjars.npm" % "types__react-dom" % "0.14.21",
-    "org.webjars.npm" % "types__react-redux" % "4.4.36",
+    "org.webjars.npm" % "types__react-dom" % "15.5.1",
+    "org.webjars.npm" % "types__react-redux" % "4.4.45",
 //    "org.webjars.npm" % "types__react-router-redux" % "4.0.34",
     "org.webjars.npm" % "types__redux" % "3.6.31",
  //   "org.webjars.npm" % "types__react-router" % "2.0.41",
@@ -45,7 +48,7 @@ libraryDependencies ++= {
     //  "org.webjars.npm" % "jasmine-core" % "2.4.1"
   )
 }
-dependencyOverrides += "org.webjars.npm" % "types__whatwg-streams" % "0.0.1"
+dependencyOverrides += "org.webjars.npm" % "types__whatwg-streams" % "0.0.2"
 
 // use the webjars npm directory (target/web/node_modules ) for resolution of module imports of angular2/core etc
 resolveFromWebjarsNodeModulesDir := true

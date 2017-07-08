@@ -1,4 +1,5 @@
 import {AppAction, AddTodoAction, ToggleTodoAction} from "../actions"
+import {Reducer} from "redux"
 
 export interface TodoState {
   id: number
@@ -23,7 +24,7 @@ const toggle = (state: TodoState, action: ToggleTodoAction) => {
   }
 }
 
-const todos = (state: TodoState[] = [], action: AppAction) => {
+export function todos(state: TodoState[], action: AddTodoAction | ToggleTodoAction): TodoState[] {
   switch (action.type) {
     case 'ADD_TODO':
       return [
@@ -39,4 +40,4 @@ const todos = (state: TodoState[] = [], action: AppAction) => {
   }
 }
 
-export default todos
+export default todos as Reducer<TodoState[]>

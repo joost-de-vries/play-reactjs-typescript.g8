@@ -5,6 +5,7 @@ interface TodoProps {
   onClick: (e: any) => void
   completed: boolean
   text: string
+  id?: number
 }
 
 const Todo = ({onClick, completed, text}:TodoProps) => (

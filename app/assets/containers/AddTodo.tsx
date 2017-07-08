@@ -1,12 +1,13 @@
 import * as React from "react"
 import {connect, Dispatch} from "react-redux"
 import {addTodo, AppAction} from "../actions/index"
+import {ReactNode,ClassAttributes} from "react"
 
 interface AddTodoProps {
   dispatch?: Dispatch<AppAction>
 }
 
-let AddTodo = ({dispatch}:AddTodoProps) => {
+let AddTodo = ({dispatch}:AddTodoProps & ClassAttributes<HTMLFormElement>) => {
   let input: HTMLInputElement
 
   return (
@@ -20,7 +21,7 @@ let AddTodo = ({dispatch}:AddTodoProps) => {
         input.value = ''
       }}>
         <input ref={node => {
-          input = node
+          input = node!
         }}/>
         <button type="submit">
           Add Todo
@@ -29,6 +30,6 @@ let AddTodo = ({dispatch}:AddTodoProps) => {
     </div>
   )
 }
-AddTodo = connect()(AddTodo)
+const AddTodoCont = connect()(AddTodo)
 
-export default AddTodo
+export default AddTodoCont

@@ -1,5 +1,5 @@
 import * as React from "react"
-import {PropTypes, MouseEventHandler} from "react"
+import {PropTypes, MouseEventHandler, HTMLAttributes, ClassAttributes} from "react"
 import Todo from "./Todo"
 import {TodoState} from "../reducers/todos"
 import {ToggleTodoAction} from "../actions"

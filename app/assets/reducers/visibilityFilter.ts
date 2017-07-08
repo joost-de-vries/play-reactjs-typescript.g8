@@ -1,6 +1,7 @@
-import {AppAction} from "../actions"
+import {AppAction, SetVisibilityFilterAction} from "../actions"
+import {Reducer,Action} from "redux"
 
-const visibilityFilter = (state = 'SHOW_ALL', action: AppAction) => {
+export function visibilityFilter (state: string, action: SetVisibilityFilterAction & Action): string  {
   switch (action.type) {
     case 'SET_VISIBILITY_FILTER':
       return action.filter
@@ -9,4 +10,4 @@ const visibilityFilter = (state = 'SHOW_ALL', action: AppAction) => {
   }
 }
 
-export default visibilityFilter
+export default visibilityFilter as Reducer<string>

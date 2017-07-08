@@ -9,9 +9,9 @@ export interface AppState {
   visibilityFilter: string
 }
 
-type AppReducer = (state: AppState, action: AppAction) => AppState
+// type AppReducer = (state: AppState, action: AppAction) => AppState
 
-export const reducer = <AppReducer>combineReducers({
+export const reducer = combineReducers({
   todos,
   visibilityFilter
 })
