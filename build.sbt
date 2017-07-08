@@ -35,7 +35,6 @@ libraryDependencies ++= {
 //    "org.webjars.npm" % "types__redux-logger" % "2.6.32",
 //    "org.webjars.npm" % "types__redux-thunk" % "2.1.31",
 //    "org.webjars.npm" % "types__redux-form" % "4.0.30",
-    "org.webjars.npm" % "types__whatwg-fetch" % "0.0.33",
 
     "org.webjars.npm" % "core-js" % "2.4.1",
     "org.webjars.npm" % "systemjs" % "0.19.41",
@@ -48,7 +47,6 @@ libraryDependencies ++= {
     //  "org.webjars.npm" % "jasmine-core" % "2.4.1"
   )
 }
-dependencyOverrides += "org.webjars.npm" % "types__whatwg-streams" % "0.0.2"
 
 // use the webjars npm directory (target/web/node_modules ) for resolution of module imports of angular2/core etc
 resolveFromWebjarsNodeModulesDir := true
