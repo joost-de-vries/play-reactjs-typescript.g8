@@ -1,8 +1,8 @@
 name := """play-reactjs-typescript"""
-version := "0.0.1"
+version := "0.0.2"
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.11.11"
 incOptions := incOptions.value.withNameHashing(true)
 updateOptions := updateOptions.value.withCachedResolution(cachedResoluton = true)
 
@@ -11,8 +11,7 @@ resolvers ++= Seq(
 )
 libraryDependencies ++= {
   Seq(
-    cache,
-
+    guice,
     //react dependencies
     "org.webjars.npm" % "react" % "15.4.0",
 //    "org.webjars.npm" % "react-addons-test-utils" % "15.4.0",
@@ -41,7 +40,6 @@ libraryDependencies ++= {
 
     //tslint dependency
     "org.webjars.npm" % "tslint-eslint-rules" % "2.1.0",
-    "org.webjars.npm" % "codelyzer" % "0.0.28",
     "org.webjars.npm" % "types__jasmine" % "2.5.38"
     //test
     //  "org.webjars.npm" % "jasmine-core" % "2.4.1"

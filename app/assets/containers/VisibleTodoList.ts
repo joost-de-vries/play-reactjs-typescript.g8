@@ -4,7 +4,8 @@ import TodoList from "../components/TodoList"
 import {TodoState} from "../reducers/todos"
 import {AppState} from "../reducers/index"
 
-const getVisibleTodos = (todos: TodoState[], filter: string) => {
+export type Filter = 'SHOW_ALL' | 'SHOW_COMPLETED' | 'SHOW_ACTIVE'
+const getVisibleTodos = (todos: TodoState[], filter: Filter) => {
   switch (filter) {
     case 'SHOW_ALL':
       return todos

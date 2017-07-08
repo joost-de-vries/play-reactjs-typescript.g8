@@ -1,5 +1,6 @@
 import * as React from "react"
 import {PropTypes, MouseEventHandler, ReactNode, ClassAttributes, HTMLAttributes} from "react"
+import {Filter} from "../containers/VisibleTodoList";
 
 function assert<A>(aOpt: A | undefined): A {
   return aOpt!
@@ -7,7 +8,7 @@ function assert<A>(aOpt: A | undefined): A {
 
 export interface LinkProps {
   active?: boolean
-  filter: string
+  filter: Filter
 }
 
 export const Link = ({active, children, onClick}:LinkProps & HTMLAttributes<HTMLAnchorElement>) => {

@@ -1,4 +1,5 @@
 import {Action} from "redux"
+import {Filter} from "../containers/VisibleTodoList";
 
 let nextTodoId = 0
 
@@ -16,10 +17,10 @@ export const addTodo = (text: string) => (<AddTodoAction>{
 
 export interface SetVisibilityFilterAction extends Action {
   type: 'SET_VISIBILITY_FILTER'
-  filter: string
+  filter: Filter
 }
 
-export const setVisibilityFilter = (filter: string) => (<SetVisibilityFilterAction>{
+export const setVisibilityFilter = (filter: Filter) => (<SetVisibilityFilterAction>{
   type: 'SET_VISIBILITY_FILTER',
   filter
 })

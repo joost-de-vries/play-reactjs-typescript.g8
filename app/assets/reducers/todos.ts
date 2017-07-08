@@ -24,7 +24,7 @@ const toggle = (state: TodoState, action: ToggleTodoAction) => {
   }
 }
 
-export function todos(state: TodoState[], action: AddTodoAction | ToggleTodoAction): TodoState[] {
+export function todos(state: TodoState[] = [], action: AddTodoAction | ToggleTodoAction): TodoState[] {
   switch (action.type) {
     case 'ADD_TODO':
       return [

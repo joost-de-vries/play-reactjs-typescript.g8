@@ -3,19 +3,12 @@ import {setVisibilityFilter, AppAction} from "../actions/index"
 import {Link, LinkProps} from "../components/Link"
 import {AppState} from "../reducers/index"
 
-// we make the attributes of mapStateToProps and mapDispatchToProps optional
-// using the Partial mapped type
-// to prevent this compilation error
-// see http://stackoverflow.com/questions/39908666/property-is-missing-in-type-error
-function partialize<A>(a: A): Partial<A> {
-  return a
-}
 
-const mapStateToProps = (state: AppState, ownProps: LinkProps) => partialize({
+const mapStateToProps = (state: AppState, ownProps: LinkProps) => ({
   active: ownProps.filter === state.visibilityFilter
 })
 
-const mapDispatchToProps = (dispatch: Dispatch<AppAction>, ownProps: LinkProps) => partialize({
+const mapDispatchToProps = (dispatch: Dispatch<AppAction>, ownProps: LinkProps) => ({
   onClick: () => {
     dispatch(setVisibilityFilter(ownProps.filter))
   }
