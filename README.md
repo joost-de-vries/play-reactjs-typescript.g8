@@ -1,4 +1,4 @@
-A [Giter8][g8] template for a start Play application with Reactjs and Typescript
+# g8 starter application for Play with Typescript compilation and Reactjs
 
 You can use this to create a local starter application by running
 
