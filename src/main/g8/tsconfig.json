@@ -15,12 +15,12 @@
     "sourceMap": true,
     "mapRoot": "/assets",
     "sourceRoot": "/assets",
-    "rootDirs": [
+    "rootDirs": [ //ignored by sbt-typescript but useful if we want to compile through tsc directly
       "app/assets",
       "test/assets"
     ],
-    "baseUrl": ".",
-    "paths": {
+    "baseUrl": ".", //ignored by sbt-typescript
+    "paths": { //ignored by sbt-typescript
       "*": [
         "*",
         "target/web/node-modules/main/webjars/*",
@@ -34,7 +34,7 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
-    "outDir": "./target/ts",
+    "outDir": "./target/ts", //ignored by sbt-typescript
     "lib": [
       "es6",
       "dom"
