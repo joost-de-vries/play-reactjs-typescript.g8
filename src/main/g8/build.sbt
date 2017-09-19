@@ -1,5 +1,5 @@
 name := """play-reactjs-typescript"""
-version := "0.0.3"
+version := "0.0.4"
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.11"
