@@ -4,6 +4,6 @@ This demo project shows how to run a typescript port of the Redux [todos](https:
 
 ### History
 #### v0.4
-- fixes issue #2. Tx @irsital
+- fixes issue #2. Tx [irsital](https://github.com/irsital)!
 #### v0.3
 - initial commit
